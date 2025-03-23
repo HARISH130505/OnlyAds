@@ -1,94 +1,106 @@
 "use client";
-import React, { useRef } from 'react';
-import Webcam from 'react-webcam';
-import { ShoppingBag } from "lucide-react";
-
-const SAMPLE_PRODUCTS = [
-  {
-    id: 1,
-    name: "NoiseGuard Pro X1",
-    brand: "SoundMaster",
-    description: "Experience pure audio bliss with our flagship noise-canceling headphones. Features 40mm premium drivers, 30-hour battery life, and ultra-comfortable memory foam ear cushions.",
-    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800",
-    price: 299.99,
-    rating: 4.5
-  },
-  {
-    id: 2,
-    name: "FitTech Pulse",
-    brand: "TechWear",
-    description: "Advanced fitness tracking smartwatch with continuous heart rate monitoring, GPS, and 20+ sport modes. Water-resistant up to 50m.",
-    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800",
-    price: 199.99,
-    rating: 4.2
-  },
-  {
-    id: 3,
-    name: "BrewMaster Elite",
-    brand: "HomeBarista",
-    description: "Professional-grade coffee maker with built-in ceramic burr grinder, 15 grind settings, and programmable brewing schedule. Makes up to 12 cups.",
-    image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800",
-    price: 249.99,
-    rating: 4.7
-  },
-  {
-    id: 4,
-    name: "AirFlow Pro",
-    brand: "TechCool",
-    description: "Smart portable air purifier with HEPA filter, air quality sensor, and mobile app control. Perfect for rooms up to 500 sq ft.",
-    image: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800",
-    price: 179.99,
-    rating: 4.4
-  },
-  {
-    id: 5,
-    name: "LuxeLight Lamp",
-    brand: "ModernHome",
-    description: "Modern LED desk lamp with wireless charging base, adjustable color temperature, and touch controls. Perfect for home office.",
-    image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800",
-    price: 89.99,
-    rating: 4.3
-  }
-];
-
-const App = () => {
-  const webcamRef = useRef(null);
+import { useClerk } from "@clerk/nextjs";
+export default function page() {
+  const { openSignIn } = useClerk();
+  const handleSignIn = (role: string) => {
+    openSignIn({
+      redirectUrl: `/${role}`,
+    });
+  };
 
   return (
-    <div className="h-screen overflow-y-scroll snap-mandatory snap-y bg-black text-white flex justify-center">
-      <div className="w-[375px] relative"> 
-        {SAMPLE_PRODUCTS.map((product) => (
-          <div key={product.id} className="relative snap-center w-full h-screen flex flex-col items-center justify-end bg-black rounded-lg overflow-hidden shadow-lg">
-            {/* Product Image */}
-            <img
-              src={product.image}
-              alt={product.name}
-              className="absolute top-0 left-0 w-full h-full object-cover"
-            />
-
-            {/* Webcam Preview */}
-            <div className="absolute top-4 right-4 border-2 border-white rounded-lg overflow-hidden shadow-md">
-              <Webcam ref={webcamRef} screenshotFormat="image/jpeg" width={100} height={70} />
-            </div>
-
-            {/* Product Details */}
-            <div className="absolute bottom-0 w-full bg-gradient-to-t from-black p-6 text-left">
-              <h2 className="text-xl font-bold">{product.name}</h2>
-              <p className="text-sm font-light">{product.brand}</p>
-              <p className="text-sm italic line-clamp-2">{product.description}</p>
-              <p className="text-lg font-semibold mt-1">${product.price.toFixed(2)}</p>
-              <p className="text-yellow-400">⭐ {product.rating.toFixed(1)}</p>
-              
-              {/* Shop Now Button */}
-              <button className="mt-3 flex items-center gap-2 bg-white text-black px-4 py-2 rounded-lg font-semibold shadow-md">
-                <ShoppingBag size={18} /> Shop Now
-              </button>
-            </div>
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black flex flex-col font-mono text-gray-200">
+      <main className="flex-1 pt-20">
+        {/* Hero Section */}
+        <section className="py-20 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-indigo-950 via-gray-900 to-black text-center relative overflow-hidden">
+          <div className="absolute inset-0 opacity-20 bg-[url('/blockchain-pattern.png')] animate-slow-scroll"></div>
+          <div className="container mx-auto px-6 relative z-10">
+            <h1 className="text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400 mb-6 animate-fade-in-down drop-shadow-[0_0_10px_rgba(79,70,229,0.5)]">
+              About OnlyAds
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto leading-relaxed animate-fade-in-up">
+              A Web3 revolution in advertising powered by real user reactions.
+            </p>
+            <div className="mt-8 h-1 w-24 bg-gradient-to-r from-indigo-400 to-cyan-400 mx-auto rounded-full shadow-[0_0_8px_rgba(34,211,238,0.6)]"></div>
           </div>
-        ))}
-      </div>
+        </section>
+
+        {/* Our Mission */}
+        <section className="py-16 px-6 max-w-5xl mx-auto relative">
+          <div className="absolute inset-0 bg-indigo-950 opacity-10 rounded-full blur-3xl -rotate-12"></div>
+          <h2 className="text-4xl font-bold text-cyan-300 mb-8 text-center relative z-10 drop-shadow-[0_0_8px_rgba(34,211,238,0.4)]">
+            Our Web3 Mission
+          </h2>
+          <div className="flex justify-center items-center">
+            <p className="text-lg text-gray-300 leading-loose bg-gray-900/80 p-6 rounded-xl shadow-lg border border-indigo-900/50">
+              We’re pioneering a decentralized future where advertising
+              transcends traditional boundaries, driven by the power of
+              blockchain technology...
+            </p>
+          </div>
+        </section>
+
+        {/* Key Features */}
+        <section className="py-16 bg-gradient-to-t from-gray-900 to-indigo-950 px-6 relative overflow-hidden">
+          <h2 className="text-4xl font-bold text-cyan-300 text-center mb-12 z-10 relative drop-shadow-[0_0_8px_rgba(34,211,238,0.4)]">
+            Web3-Powered Features
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {[
+              {
+                title: "Authentic Reactions",
+                desc: "Real-time emotions captured on-chain for ultimate transparency.",
+              },
+              {
+                title: "NFT Rewards",
+                desc: "Mint unique tokens for your decentralized engagement.",
+              },
+              {
+                title: "Blockchain Insights",
+                desc: "Immutable analytics for a trustless advertising ecosystem.",
+              },
+            ].map((feature, index) => (
+              <div
+                key={index}
+                className="p-6 bg-gray-900/90 backdrop-blur-sm rounded-xl shadow-lg border border-indigo-900/50 hover:border-cyan-400/50 hover:shadow-[0_0_15px_rgba(34,211,238,0.3)] hover:-translate-y-2 transition-all duration-300 group"
+              >
+                <h3 className="text-xl font-bold text-cyan-300 mb-3">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-400">{feature.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20 text-center">
+          <h2 className="text-4xl font-bold text-cyan-300 mb-8 animate-pulse">
+            Join the Web3 Revolution
+          </h2>
+          <div className="flex justify-center space-x-6">
+            <button
+              onClick={() => handleSignIn("products")}
+              className="bg-gradient-to-r from-indigo-600 to-cyan-600 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105"
+            >
+              Join as User
+            </button>
+            <button
+              onClick={() => handleSignIn("companyReg")}
+              className="bg-transparent border-2 border-cyan-400 text-cyan-400 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:bg-cyan-600 hover:text-white"
+            >
+              Register Company
+            </button>
+          </div>
+        </section>
+      </main>
+
+      {/* Footer */}
+      <footer className="bg-gradient-to-r from-gray-900 to-indigo-950 text-gray-400 py-8 text-center">
+        <p>
+          © {new Date().getFullYear()} OnlyAds. Decentralized rights reserved.
+        </p>
+      </footer>
     </div>
   );
-};
-
-export default App;
+}
