@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import { useState, useRef } from "react";
 import { getContract } from "../utils/contractUtils";
 
