@@ -39,7 +39,7 @@ export default function Page() {
         <div className="absolute inset-0 bg-[url('/web3-grid.png')] opacity-10 animate-slow-scroll"></div>
       </div>
 
-      <main className="relative z-10 pt-20">
+      <main className="relative z-10">
         {/* Hero Section */}
         <section className="py-24 text-center relative">
           <div className="absolute inset-0 bg-gradient-to-t from-black via-indigo-950/60 to-transparent animate-gradient-shift"></div>
@@ -109,14 +109,14 @@ export default function Page() {
           </h2>
           <div className="flex justify-center space-x-8">
             <button
-              onClick={() => handleSignIn('user')}
+              onClick={() => handleSignIn('products')}
               className="bg-gradient-to-r from-indigo-600 to-cyan-600 text-white px-10 py-4 rounded-full font-semibold text-lg shadow-[0_0_20px_rgba(34,211,238,0.5)] hover:shadow-[0_0_30px_rgba(34,211,238,0.8)] hover:scale-110 transition-all duration-300 relative overflow-hidden group"
             >
               <span className="relative z-10">Join as User</span>
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.2)_0%,_transparent_70%)] opacity-0 group-hover:opacity-100 animate-pulse"></div>
             </button>
             <button
-              onClick={() => handleSignIn('company')}
+              onClick={() => handleSignIn('companyReg')}
               className="bg-transparent border-2 border-cyan-400 text-cyan-400 px-10 py-4 rounded-full font-semibold text-lg hover:bg-gradient-to-r hover:from-cyan-500/20 hover:to-purple-500/20 hover:text-white hover:border-cyan-300 hover:scale-110 transition-all duration-300 relative group"
             >
               <span className="relative z-10">Register Company</span>
