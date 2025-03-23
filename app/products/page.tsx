@@ -63,6 +63,17 @@ const SAMPLE_PRODUCTS = [
     rating: 4.3,
     userRating: null,
   },
+  {
+    id: 6,
+    name: "LuxeLight Lamp",
+    brand: "ModernHome",
+    description:
+      "Modern LED desk lamp with wireless charging base, adjustable color temperature, and touch controls. Perfect for home office.",
+    image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800",
+    price: 89.99,
+    rating: 4.3,
+    userRating: null,
+  }
 ];
 
 const App = () => {
