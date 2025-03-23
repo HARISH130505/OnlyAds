@@ -1,0 +1,25 @@
+{
+  "name": "ad-review-platform",
+  "version": "1.0.0",
+  "description": "A smart contract platform for reviewing advertisements and products.",
+  "main": "scripts/deploy.js",
+  "scripts": {
+    "deploy": "hardhat run scripts/deploy.js --network sepolia",
+    "test": "hardhat test",
+    "verify": "hardhat verify --network sepolia"
+  },
+  "dependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.0",
+    "react-webcam": "^7.2.0"
+  },
+  "devDependencies": {
+    "@nomiclabs/hardhat-waffle": "^2.0.6",
+    "chai": "^4.3.4",
+    "dotenv": "^16.4.7",
+    "ethers": "^5.8.0",
+    "hardhat": "^2.22.19",
+    "mocha": "^8.4.0"
+  },
+  "author": "Your Name",
+  "license": "MIT"
+}

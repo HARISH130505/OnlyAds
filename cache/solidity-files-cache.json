@@ -1,0 +1,40 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "E:\\programming\\hackverse-2025\\backend\\AdReviewPlatform\\contracts\\AdReviewPlatform.sol": {
+      "lastModificationDate": 1742713645792,
+      "contentHash": "9d285d9b4eb358931e12d5ac49f8bbd4",
+      "sourceName": "contracts/AdReviewPlatform.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "AdReviewPlatform"
+      ]
+    }
+  }
+}
