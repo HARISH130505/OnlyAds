@@ -47,12 +47,6 @@ export default function RootLayout({
         >
           {children}
         </body>
-        <SignedOut>
-          <SignInButton />
-        </SignedOut>
-        <SignedIn>
-          <UserButton />
-        </SignedIn>
       </html>
     </ClerkProvider>
   );

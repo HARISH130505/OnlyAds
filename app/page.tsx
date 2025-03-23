@@ -125,12 +125,6 @@ export default function Page() {
           </div>
         </section>
       </main>
-
-      {/* Footer */}
-      <footer className="bg-gradient-to-r from-black to-indigo-950 text-gray-400 py-8 text-center relative z-10">
-        <p>© {new Date().getFullYear()} OnlyAds. Decentralized rights reserved.</p>
-      </footer>
-
       {/* Custom CSS for Animations */}
       <style jsx global>{`
         @keyframes pulse-slow {

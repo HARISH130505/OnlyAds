@@ -69,27 +69,6 @@ export default function VideoUploadPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black flex flex-col font-mono text-gray-200">
-      {/* Header */}
-      <header className="bg-gradient-to-r from-gray-900 to-indigo-950 text-white py-4 px-6 fixed top-0 w-full z-50 transition-all duration-300 hover:shadow-[0_0_15px_rgba(79,70,229,0.5)]">
-        <div className="container mx-auto flex justify-between items-center">
-          <h1 className="text-2xl font-extrabold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-cyan-400 animate-pulse">
-            OnlyAds
-          </h1>
-          <nav className="space-x-6">
-            {["Home", "About", "Contact"].map((item) => (
-              <Link
-                key={item}
-                href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                className="relative text-gray-400 hover:text-cyan-300 transition-colors duration-300 group"
-              >
-                {item}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full shadow-[0_0_5px_rgba(34,211,238,0.7)]"></span>
-              </Link>
-            ))}
-          </nav>
-        </div>
-      </header>
-
       <main className="flex-1 pt-20 pb-16">
         {/* Upload Section */}
         <section className="py-12 px-6 max-w-5xl mx-auto relative">
